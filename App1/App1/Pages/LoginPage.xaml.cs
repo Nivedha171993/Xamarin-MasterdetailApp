@@ -33,10 +33,10 @@ namespace App1.Pages
 
         async void Login_Procedure(object sender, EventArgs e)
         {
-            if (EntryUsername.Text!="" && EntryPassword.Text!="" )
-            {
-                if (EntryUsername.Text.Equals("Admin") && EntryPassword.Text.Equals("123"))
-                {
+            //if (EntryUsername.Text!="" && EntryPassword.Text!="" )
+            //{
+            //    if (EntryUsername.Text.Equals("Admin") && EntryPassword.Text.Equals("123"))
+            //    {
                     Navigation.InsertPageBefore(new Pages.Item1(), this);//Navigate to Home page in master details relation
                     await Navigation.PopToRootAsync();
                     //var masterpageItem = new ObservableCollection<ClassFiles.MasterPageItem>();
@@ -54,20 +54,20 @@ namespace App1.Pages
                     //NavigationPage page = new NavigationPage(new MasterPage(masterpageItem));
 
                     //listView.ItemsSource = masterpageItem;
-                }
-                else
-                {
-                    gLogin.RowDefinitions[1].Height = 40;
-                    Error_label.IsVisible = true;
-                    Error_label.Text = "Please Enter valid Credentials";
-                }
-            }
-            else
-            {
-                gLogin.RowDefinitions[1].Height = 40;
-                Error_label.IsVisible = true;
-                Error_label.Text = "Missing Credentials";
-            }
+            //    }
+            //    else
+            //    {
+            //        gLogin.RowDefinitions[1].Height = 40;
+            //        Error_label.IsVisible = true;
+            //        Error_label.Text = "Please Enter valid Credentials";
+            //    }
+            //}
+            //else
+            //{
+            //    gLogin.RowDefinitions[1].Height = 40;
+            //    Error_label.IsVisible = true;
+            //    Error_label.Text = "Missing Credentials";
+            //}
         }
     }
 }
