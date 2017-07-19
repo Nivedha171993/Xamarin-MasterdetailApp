@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MasterPage"
+             Padding="0,50,0,0"
+             Title="Titles">
+  <!--x:Name="MasterPage"-->
+  <ContentPage.Content>
+    <StackLayout VerticalOptions="FillAndExpand">
+      <ListView x:Name="lstScreens" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
+        <!--ItemsSource="{Binding masterpageItem, Source={x:Reference MasterPage}}">-->
+        <!--ItemsSource="{Binding masterpageItem}"-->>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <TextCell Text="{Binding Title}"></TextCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Pages.LoginPage">
+  <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0" x:Name="gLogin">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="70"/>
+      <RowDefinition Height="0"/>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="50"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="35"/>
+      <ColumnDefinition Width="90"/>
+      <ColumnDefinition Width="10"/>
+    </Grid.ColumnDefinitions>
+    <Label Text="Login" TextColor="Black" Grid.Row="0"  Font="40" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+
+    <Label Text="{Binding ErrorText}" x:Name="Error_label" TextColor="Red" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" IsVisible="false"></Label>
+
+    <Image Source="User.png" Grid.Column="0" Grid.Row="2"/>
+    <Entry x:Name="EntryUsername" Placeholder="UserName" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="5"></Entry>
+
+    <Image Source="Password.png" Grid.Column="0" Grid.Row="3"/>
+    <Entry x:Name="EntryPassword" Placeholder="Password" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="5" IsPassword="True"></Entry>
+
+    <Button x:Name="btnSubmit" Text="LOGIN" Clicked="Login_Procedure" TextColor="Black" BorderRadius="50" Grid.Row="4" Grid.ColumnSpan="2" FontAttributes="Bold"></Button>
+  </Grid>
+</ContentPage>
