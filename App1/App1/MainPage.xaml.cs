@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using App1.Pages;
 using Xamarin.Forms;
 
 namespace App1
@@ -15,7 +16,7 @@ namespace App1
             MasterBehavior = MasterBehavior.Popover;//new
             MasterPage.listView.ItemSelected += OnItemSelected;
             Master = MasterPage;
-            NavigationPage page = new NavigationPage(new Pages.LoginPage());
+            NavigationPage page = new NavigationPage(new Pages.LoginPage(MasterPage.masterpageItem));
             Detail = page;
         }
 
@@ -27,6 +28,7 @@ namespace App1
                 Page displayPage = (Page)Activator.CreateInstance(item.TargetType);
                 NavigationPage page = new NavigationPage(displayPage);
                 Detail = page;
+
 
                 //Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
                 MasterPage.listView.SelectedItem = null;

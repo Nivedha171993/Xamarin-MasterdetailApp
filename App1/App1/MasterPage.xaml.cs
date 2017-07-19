@@ -13,11 +13,12 @@ namespace App1
     {
         public ListView listView { get { return lstScreens; } }
 
+        public ObservableCollection<ClassFiles.MasterPageItem> masterpageItem { get; set; }
         public MasterPage()
         {
             InitializeComponent();
 
-            var masterpageItem = new ObservableCollection<ClassFiles.MasterPageItem>();
+            masterpageItem = new ObservableCollection<ClassFiles.MasterPageItem>();
             masterpageItem.Add(new ClassFiles.MasterPageItem
             {
                 Title = "Login",
@@ -30,7 +31,7 @@ namespace App1
                 TargetType = typeof(Pages.SignUp)
             });
             listView.ItemsSource = masterpageItem;
-            var MainPage = new NavigationPage(new Pages.LoginPage(masterpageItem));
+            //var MainPage = new NavigationPage(new Pages.LoginPage(masterpageItem));
         }
     }
 }
