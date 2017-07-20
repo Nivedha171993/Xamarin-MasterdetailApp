@@ -16,9 +16,16 @@ namespace App1.Pages
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, true); //title bar
         }
+        ObservableCollection<ClassFiles.MasterPageItem> _masteritem { get; set; }
         public LoginPage(ObservableCollection<ClassFiles.MasterPageItem> masteritem)
         {
+
+			InitializeComponent();
+			NavigationPage.SetHasNavigationBar(this, true); //title bar
+
+			_masteritem = masteritem;
             // DisplayAlert("Login", "masteritem.received", "OK");
+            /*
             masteritem.Add(new ClassFiles.MasterPageItem
             {
                 Title = "Page1",
@@ -28,7 +35,8 @@ namespace App1.Pages
             {
                 Title = "Page2",
                 TargetType = typeof(Pages.Item2)
-            });         
+            });
+            */
         }
 
         async void Login_Procedure(object sender, EventArgs e)
@@ -39,6 +47,17 @@ namespace App1.Pages
             //    {
                     Navigation.InsertPageBefore(new Pages.Item1(), this);//Navigate to Home page in master details relation
                     await Navigation.PopToRootAsync();
+            _masteritem.Clear();
+			_masteritem.Add(new ClassFiles.MasterPageItem
+			{
+				Title = "Page1",
+				TargetType = typeof(Pages.Item1)
+			});
+			_masteritem.Add(new ClassFiles.MasterPageItem
+			{
+				Title = "Page2",
+				TargetType = typeof(Pages.Item2)
+			});
                     //var masterpageItem = new ObservableCollection<ClassFiles.MasterPageItem>();
                     //masterpageItem.Add(new ClassFiles.MasterPageItem
                     //{
